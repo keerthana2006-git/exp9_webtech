@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Science Fair Registration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaf6ff;
+            margin: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: white;
+            width: 80%;
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input, select {
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+            box-sizing: border-box;
+        }
+
+        .gender {
+            width: auto;
+        }
+
+        button {
+            background-color: #0077b6;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #023e8a;
+        }
+
+        #result {
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>SCIENCE FAIR 2026</h1>
+    <h3>Participant Registration Form</h3>
+</header>
+
+<div class="container">
+
+    <h2>Register for Science Fair</h2>
+
+    <form id="registrationForm">
+
+        <input type="text"
+               id="name"
+               placeholder="Enter Your Name *"
+               required>
+
+        <input type="password"
+               id="password"
+               placeholder="Enter Password *"
+               required
+               minlength="6">
+
+        <input type="number"
+               id="age"
+               placeholder="Enter Your Age *"
+               required
+               min="1">
+
+        <input type="tel"
+               id="mobile"
+               placeholder="Enter Mobile Number *"
+               required
+               pattern="[0-9]{10}"
+               maxlength="10">
+
+        <input type="email"
+               id="email"
+               placeholder="Enter Email *"
+               required>
+
+        <p>Gender *</p>
+
+        <label>
+            <input type="radio"
+                   name="gender"
+                   value="Male"
+                   class="gender"
+                   required>
+            Male
+        </label>
+
+        <label>
+            <input type="radio"
+                   name="gender"
+                   value="Female"
+                   class="gender">
+            Female
+        </label>
+
+        <br><br>
+
+        <select id="state" required>
+            <option value="">Select State *</option>
+            <option value="Tamilnadu">Tamilnadu</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Telangana">Telangana</option>
+        </select>
+
+        <br>
+
+        <button type="submit">
+            Submit
+        </button>
+
+    </form>
+
+    <div id="result"></div>
+
+</div>
+
+<footer>
+    <p>Keerthana - Science Fair Project Site</p>
+    <p>Web Technology Experiment 9</p>
+</footer>
+
+<script>
+
+document.getElementById("registrationForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let age = document.getElementById("age").value;
+    let email = document.getElementById("email").value;
+
+    let result = document.getElementById("result");
+
+    result.innerHTML =
+        "Registration Successful!<br>" +
+        "Welcome, " + name + "!<br>" +
+        "Age: " + age + "<br>" +
+        "Email: " + email;
+
+});
+
+</script>
+
+</body>
+</html>
